@@ -1,0 +1,20 @@
+[package]
+authors = ["lencx <cxin1314@gmail.com>"]
+edition = "2018"
+name = "native-rust"
+version = "0.1.1"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+node-bindgen = {version = "4.0"}
+num = "0.4.0"
+rand = "0.8.0"
+[build-dependencies]
+node-bindgen = {version = "4.0", features = ["build"]}
+
+[build]
+rustflags = ["-C", "target-cpu=native"]
