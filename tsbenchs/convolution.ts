@@ -1,15 +1,8 @@
-import { filtering, filter_sum } from "../wasm/pkg/rsw_test";
+import { filter_sum } from "../wasm/pkg/rsw_test";
 import d from "../native/dist";
-import { range } from "ramda";
-
-console.log(d.filterSum);
 
 const N = 10_000;
 const N_COEFS = 20;
-
-function randArray(n: number, ceil: number) {
-  return range(0, n).map(() => Math.random() * ceil);
-}
 
 export function wasmConv() {
   return filter_sum();

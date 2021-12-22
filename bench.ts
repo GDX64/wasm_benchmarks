@@ -28,7 +28,8 @@ function benchPendulum() {
     save({ file: "pend", version: "1.0.0" }),
     save({ file: "pend", format: "chart.html" })
   );
+  console.log(pendulumNative(), pendulumWasm(), pendulumJS(), fastJSPendulum());
 }
 
 benchPendulum();
-console.log(pendulumNative(), pendulumWasm(), pendulumJS(), fastJSPendulum());
+// benchConv();

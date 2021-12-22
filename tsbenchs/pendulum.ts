@@ -42,7 +42,9 @@ class Pendulum {
   }
 
   calc_acceleration(pos: Vec3, speed: Vec3): Vec3 {
-    return pos.scale(-this.calc_t(pos, speed) / (this.l * this.m)).add(this.g.scale(1.0 / this.m));
+    return pos
+      .scale(-this.calc_t(pos, speed) / (this.l * this.m))
+      .add(this.g.scale(1.0 / this.m));
   }
 
   evolve() {
@@ -61,5 +63,3 @@ export function pendulumJS() {
   }
   return p.pos.norm();
 }
-
-// console.log(benchJS());
